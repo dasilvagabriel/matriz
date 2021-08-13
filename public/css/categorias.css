@@ -1,0 +1,152 @@
+.container-categorias{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	margin-top: 30px;
+	margin-left: 80px;
+	padding: 20px;
+	font-size: 20px;
+}
+
+.container-categorias a{
+	margin-bottom: 20px;
+	text-decoration: none;
+	color: #5c5c5c;
+}
+
+i {
+  margin-right: 10px;
+  color: #5c5c5c;
+}
+
+.fa-chevron-left{
+	color: white;
+}
+.fra-chevron-left:hover{
+	text-decoration: none;
+	color: #7ED50E
+}
+
+/*the container must be positioned relative:*/
+.autocomplete {
+  position: relative;
+  display: inline-block;
+}
+
+input {
+  border: 1px solid transparent;
+  background-color: #f1f1f1;
+  padding: 10px;
+  font-size: 16px;
+}
+
+input[type=text] {
+  background-color: #f1f1f1;
+  width: 100%;
+}
+
+input[type=submit] {
+  background-color: DodgerBlue;
+  color: #fff;
+  cursor: pointer;
+}
+
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-radius: 25px;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff; 
+  border-bottom: 1px solid #d4d4d4; 
+}
+
+/*when hovering an item:*/
+.autocomplete-items div:hover {
+  background-color: #e9e9e9; 
+}
+
+/*when navigating through the items using the arrow keys:*/
+.autocomplete-active {
+  background-color: DodgerBlue !important; 
+  color: #ffffff; 
+}
+
+.button-style{
+	background-color: #12734D; /* Green */
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	border-top-right-radius: 50px;
+	border-bottom-right-radius: 50px;
+	height: 70px;
+	font-size: 20px;
+	position: relative;
+	bottom: 20px;
+}
+
+.fa-search{
+	color:white;
+}
+.fa-search:hover{
+	color:green;
+}
+
+.bar-style{
+  background-color:white;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  height: 70px;
+  position: relative;
+  bottom: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.title-bar{
+  margin-bottom: 59px;
+  color:white;
+  text-align:center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 36px;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+}
+.suggestion-wrap{
+  text-align: center;
+}
+
+.suggestion-wrap button {
+  font-size: 14px;
+  font-family: 'Helvetica', sans-serif;
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 0 15px;
+  line-height: 32px;
+  color: #fff;
+  border-radius: 16px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border: none;
+  outline:none;
+}
+.suggestion-wrap button:hover{
+  color:#20A868;
+}

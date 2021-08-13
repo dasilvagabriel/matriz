@@ -1,0 +1,204 @@
+html,body{
+  padding: 0;
+  margin: 0;
+}
+
+.header {
+  text-align: left;
+  color: white;
+  font-size: 20px;
+  min-height: 14vh;
+  background-size: cover;
+  background-position: center center;
+  padding: 10px;
+  background-color: #2994F2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.titulo-header{
+  margin-top:15px;
+  margin-bottom: 5px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  font-size: 25px;
+}
+
+.menu-links{
+  margin-top:20px;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  color: #98CCB8;
+}
+
+.menu-links:hover{
+  color: white;
+}
+
+.home-link{
+  margin-top:20px;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  color: #98CCB8;
+  margin-left: 40px;
+}
+
+.home-link:hover{
+  color: white;
+}
+
+i {
+  margin-right: 5px;
+  color: #98CCB8;
+  text-align: center;
+  vertical-align: middle;
+}
+.fa-chevron-left{
+  color: white;
+  margin-left: 10px;
+}
+
+.container-menu{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.card-info{
+  width: 30%;
+  height: 100vh;
+  background: #D8D8D8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.card-texto{
+  width: 70%;
+  height: 100vh;
+  flex-direction: column;
+}
+.circle-key{
+  align-items: center;
+  text-align: center;
+}
+
+.circle{
+  width:300px; 
+  height:300px;
+  border-radius: 50%;
+  background: rgba(152, 204, 184, 0.3);
+  vertical-align: middle;
+
+}
+.fa-key{
+  font-size: 280px; 
+  align-items: flex-start;
+  color: 54605B;
+}
+.titulo-sessoes{
+  margin-left: 50px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 25px;
+  color: #474646;
+  margin-top: 40px;
+}
+
+.texto-sessoes{
+  margin-left: 50px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: #000000;
+  text-decoration: None;
+  word-wrap: break-word;
+  max-width: 90%;
+}
+
+.texto-clicavel{
+  margin-left: 50px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: #000000;
+  text-decoration: None;
+  word-wrap: break-word;
+  max-width: 90%;
+}
+
+.texto-clicavel:hover{
+  color: lightgreen;
+  opacity: 100;
+}
+
+ /* aqui começa a barrinha de pesquisa*/
+form{
+    position: relative;
+    transition: all 1s;
+    width: 50px;
+    height: 50px;
+    background: white;
+    box-sizing: border-box;
+    border-radius: 25px;
+    border: 4px solid white;
+}
+
+input{
+    position: absolute;
+    width: 100%;
+    height: 42.5px;
+    line-height: 30px;
+    outline: 0;
+    border: 0;
+    display: none;
+    font-size: 1em;
+    border-radius: 20px;
+    padding: 0 20px;
+    background: white;
+}
+
+.fa{
+    box-sizing: border-box;
+    padding: 10px;
+    width: 42.5px;
+    height: 42.5px;
+    border-radius: 50%;
+    color: #07051a;
+    text-align: center;
+    font-size: 1.2em;
+    transition: all 1s;
+}
+
+form:hover{
+    width: 200px;
+    cursor: pointer;
+}
+
+form:hover input{
+    display: block;
+}
+
+form:hover .fa{
+    background: #07051a;
+    color: white;
+}
+
+@media only screen and (max-width: 900px){
+.circle{
+  width: 100px;
+  height: 100px;
+}}
+
+.fa-key{
+  font-size: 80px;
+}

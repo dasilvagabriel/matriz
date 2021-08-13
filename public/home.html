@@ -1,0 +1,167 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <title> SOx Home </title>    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/283f69ca47.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,800" rel="stylesheet" />
+    <link href="css/main.css" rel="stylesheet" />
+    <div class="s006">
+        <fieldset>
+          <legend class="title-bar">Como podemos te ajudar?</legend>
+            <div class="autocomplete" style="width:650px;" style="border-top-left-radius: 50px;">
+              <input id="searchField" type="text" name="Controles" placeholder="Testes ...." class="bar-style", style="border-top-left-radius: 50px;">
+            </div>
+            <button class="button-style" onclick="window.location.href ='http://localhost:3000/controles/'+ document.getElementById('searchField').value"> <i class="fas fa-search"></i> </button>
+            <div class="suggestion-wrap">
+              <button onclick="window.location.href ='http://localhost:3000/controles/SoD mudanças'+ document.getElementById('searchField').value">Controle</button>
+              <button onclick="window.location.href ='http://localhost:3000/controles/Monitoramento de incidentes'+ document.getElementById('searchField').value">Controle</button>
+              <!-- <button onclick="window.location.href ='http://localhost:3000/controles/Mudanças de infraestrutura'+ document.getElementById('searchField').value">Mudanças de infraestruturas</button> -->
+              <button onclick="window.location.href ='http://localhost:3000/controles/Mudanças de desenvolvimento'+ document.getElementById('searchField').value">Controle</button>
+          </div>
+        </fieldset>
+    </div>
+
+<div class="container-menu">
+  <a class="card-menu" href="acessos.html">
+      <img src="images/id_badge.svg" class="icone-menu">
+      <h1 class="card-title">Categoria 1</h1>
+      <p class="p-text">Exemplos de controles</p>  
+  </a>
+
+  <a class="card-menu" href="mudancas.html">
+     <img src="images/branch.svg" class="icone-menu">
+      <h1 class="card-title">Categoria 2</h1>
+      <p class="p-text">Exemplos de controleso</p>  
+  </a>
+
+  <a class="card-menu" href="operacoes.html">
+    <img src="images/database.svg" class="icone-menu">
+    <h1 class="card-title">Categoria 3</h1>
+     <p class="p-text">Exemplos de controles</p>  
+  </a>
+</div>
+
+</main>
+
+<footer class="text-muted py-5">
+    <p class="float-end mb-1">
+      <a href="#">Back to top</a>
+    </p>
+    <p class="mb-1"> Nome da comapnhia &copy; 2021 </p>
+</footer>
+<script>
+  function autocomplete(inp, arr) {
+    /*the autocomplete function takes two arguments,
+    the text field element and an array of possible autocompleted values:*/
+    var currentFocus;
+    /*execute a function when someone writes in the text field:*/
+    inp.addEventListener("input", function(e) {
+        var a, b, i, val = this.value;
+        /*close any already open lists of autocompleted values*/
+        closeAllLists();
+        if (!val) { return false;}
+        currentFocus = -1;
+        /*create a DIV element that will contain the items (values):*/
+        a = document.createElement("DIV");
+        a.setAttribute("id", this.id + "autocomplete-list");
+        a.setAttribute("class", "autocomplete-items");
+        /*append the DIV element as a child of the autocomplete container:*/
+        this.parentNode.appendChild(a);
+        /*for each item in the array...*/
+        for (i = 0; i < arr.length; i++) {
+          /*check if the item starts with the same letters as the text field value:*/
+          if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+            /*create a DIV element for each matching element:*/
+            b = document.createElement("DIV");
+            /*make the matching letters bold:*/
+            b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+            b.innerHTML += arr[i].substr(val.length);
+            /*insert a input field that will hold the current array item's value:*/
+            b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+            /*execute a function when someone clicks on the item value (DIV element):*/
+            b.addEventListener("click", function(e) {
+                /*insert the value for the autocomplete text field:*/
+                inp.value = this.getElementsByTagName("input")[0].value;
+                /*close the list of autocompleted values,
+                (or any other open lists of autocompleted values:*/
+                closeAllLists();
+            });
+            a.appendChild(b);
+          }
+        }
+    });
+    /*execute a function presses a key on the keyboard:*/
+    inp.addEventListener("keydown", function(e) {
+        var x = document.getElementById(this.id + "autocomplete-list");
+        if (x) x = x.getElementsByTagName("div");
+        if (e.keyCode == 40) {
+          /*If the arrow DOWN key is pressed,
+          increase the currentFocus variable:*/
+          currentFocus++;
+          /*and and make the current item more visible:*/
+          addActive(x);
+        } else if (e.keyCode == 38) { //up
+          /*If the arrow UP key is pressed,
+          decrease the currentFocus variable:*/
+          currentFocus--;
+          /*and and make the current item more visible:*/
+          addActive(x);
+        } else if (e.keyCode == 13) {
+          /*If the ENTER key is pressed, prevent the form from being submitted,*/
+          e.preventDefault();
+          if (currentFocus > -1) {
+            /*and simulate a click on the "active" item:*/
+            if (x) x[currentFocus].click();
+          }
+        }
+    });
+    function addActive(x) {
+      /*a function to classify an item as "active":*/
+      if (!x) return false;
+      /*start by removing the "active" class on all items:*/
+      removeActive(x);
+      if (currentFocus >= x.length) currentFocus = 0;
+      if (currentFocus < 0) currentFocus = (x.length - 1);
+      /*add class "autocomplete-active":*/
+      x[currentFocus].classList.add("autocomplete-active");
+    }
+    function removeActive(x) {
+      /*a function to remove the "active" class from all autocomplete items:*/
+      for (var i = 0; i < x.length; i++) {
+        x[i].classList.remove("autocomplete-active");
+      }
+    }
+    function closeAllLists(elmnt) {
+      /*close all autocomplete lists in the document,
+      except the one passed as an argument:*/
+      var x = document.getElementsByClassName("autocomplete-items");
+      for (var i = 0; i < x.length; i++) {
+        if (elmnt != x[i] && elmnt != inp) {
+          x[i].parentNode.removeChild(x[i]);
+        }
+      }
+    }
+    /*execute a function when someone clicks in the document:*/
+    document.addEventListener("click", function (e) {
+        closeAllLists(e.target);
+    });
+  }
+  
+  /*An array containing all the country names in the world:*/
+  var listaControles = ['controle','controle','controle','controle','controle','controle','controle','controle','controle'
+];
+  
+  /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
+  autocomplete(document.getElementById("searchField"), listaControles);
+  </script>
+  </body>
+</html>

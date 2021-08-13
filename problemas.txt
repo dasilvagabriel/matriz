@@ -1,0 +1,8 @@
+- como criar paginas in bulk?
+- como tornar a edição das paginas facil (vamos ter algo parecido com wordpress? Excel?)
+
+coisas do futuro:
+- como criar os toggles para a páginal final
+- como tornar o botão da barra clicavel para fazer a pesquisa
+- como clicar nas sugestões e mandar elas pra pesquisa
+- como pesquisar dentro do proprio site
